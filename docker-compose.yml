@@ -1,0 +1,9 @@
+services:
+  slog-and-monitoring:
+    image: golang:1.22-alpine3.20
+    working_dir: /app/sample/logging-and-monitoring
+    command: sh -c "go mod tidy && go run *.go"
+    ports:
+      - 8000:8000
+    volumes:
+      - ./logging-and-monitoring:/app/sample/logging-and-monitoring
